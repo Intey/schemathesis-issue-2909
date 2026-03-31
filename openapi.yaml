@@ -11,7 +11,7 @@ paths:
       summary: List all articles
       operationId: api.articles.search
       parameters:
-        - name: x-trace-id,
+        - name: x-trace-id
           in: header
           required: false
           schema:
@@ -20,7 +20,7 @@ paths:
               description: String in uuid4 format. Will be used to trace what happened to the request in case of an error.
               title: X-Trace-Id
           description: String in uuid4 format. Will be used to trace what happened to the request in case of an error.
-          example: 7e7dr3b6-c81f-4e7b-91s9-cb53b2416f4f
+          example: e707c9c9-3946-4cb3-8342-c5907d378af6
       responses:
         "200":
           description: List of articles
