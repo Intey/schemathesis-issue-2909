@@ -1,0 +1,15 @@
+[project]
+name = "tmp-mctusxh0l0"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "connexion>=3.3.0",
+    "uvicorn>=0.42.0",
+]
+
+[dependency-groups]
+dev = [
+    "schemathesis>=4.14.2",
+]

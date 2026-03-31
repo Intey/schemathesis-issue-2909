@@ -1,0 +1,42 @@
+openapi: "3.0.0"
+
+info:
+  title: Articles API
+  description: Simple CRUD API for articles
+  version: "1.0"
+
+paths:
+  /:
+    get:
+      summary: List all articles
+      operationId: api.articles.search
+      parameters:
+        - name: x-trace-id,
+          in: header
+          required: false
+          schema:
+              type: string
+              format: uuid
+              description: String in uuid4 format. Will be used to trace what happened to the request in case of an error.
+              title: X-Trace-Id
+          description: String in uuid4 format. Will be used to trace what happened to the request in case of an error.
+          example: 7e7dr3b6-c81f-4e7b-91s9-cb53b2416f4f
+      responses:
+        "200":
+          description: List of articles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      pattern: "[1-9]+"
+                      readOnly: true
+                      example: "1000"
+                    uuid:
+                      type: string
+                      format: uuid
+                      example: "87e28f09-05f8-4f27-b39b-abf2e2f4f220"
